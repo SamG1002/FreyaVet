@@ -1,0 +1,43 @@
+HELP.md
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+# Arquivos específicos do Maven
+target/
+
+# Arquivos de log
+*.log
+
+# Arquivos de build do Gradle
+build/
+
+# Arquivos de configuração do Docker
+docker-compose.yml
+docker-compose.override.yml
+docker-compose.dev.yml
+docker-compose.prod.yml
+docker-compose.override.prod.yml
+
+# Diretório do Docker
+.docker/
+
+# Arquivos de imagem do Docker
+*.tar
+
