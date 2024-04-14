@@ -8,7 +8,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
-import java.util.Date;
+
 
 @Table(name="user")
 @Entity(name="User")
@@ -30,10 +30,12 @@ public class User {
     private LocalDateTime dt_create;
     private LocalDateTime last_acess;
 
-    public User(UserRegister dados) {
 
-        this.login = dados.login();
-        this.password = dados.password();
+    public User(UserRegister data) {
+
+        this.login = data.login();
+        this.password = data.password();
+
         this.acess_level = "";
         this.blocked = false;
         this.change_password = true;
