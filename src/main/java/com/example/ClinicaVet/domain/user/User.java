@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
+
 @Table(name="user")
 @Entity(name="User")
 @Getter
@@ -29,10 +30,12 @@ public class User {
     private LocalDateTime dt_create;
     private LocalDateTime last_acess;
 
+
     public User(UserRegister data) {
 
         this.login = data.login();
         this.password = data.password();
+
         this.acess_level = "";
         this.blocked = false;
         this.change_password = true;
