@@ -26,7 +26,7 @@ CREATE TABLE user (
 );
 
 CREATE TABLE client (
-  idclient bigint UNIQUE PRIMARY KEY NOT NULL,
+  idclient bigint UNIQUE PRIMARY KEY NOT NULL AUTO_INCREMENT,
   name_client varchar(255) NOT NULL,
   cpf_client varchar(255) UNIQUE NOT NULL,
   rg_client varchar(255),
@@ -36,12 +36,12 @@ CREATE TABLE client (
 );
 
 CREATE TABLE specialty (
-  idspecialty bigint UNIQUE PRIMARY KEY NOT NULL,
+  idspecialty bigint UNIQUE PRIMARY KEY NOT NULL AUTO_INCREMENT,
   name_specialty varchar(255) NOT NULL
 );
 
 CREATE TABLE doctor (
-  iddoctor bigint UNIQUE PRIMARY KEY NOT NULL,
+  iddoctor bigint UNIQUE PRIMARY KEY NOT NULL AUTO_INCREMENT,
   name_Doctor varchar(255) NOT NULL,
   CRM varchar(255) UNIQUE NOT NULL,
   cpf_Doctor varchar(255) UNIQUE NOT NULL,
@@ -53,12 +53,12 @@ CREATE TABLE doctor (
 );
 
 CREATE TABLE species (
-  idspecies bigint UNIQUE PRIMARY KEY NOT NULL,
+  idspecies bigint UNIQUE PRIMARY KEY NOT NULL AUTO_INCREMENT,
   name_species varchar(255)
 );
 
 CREATE TABLE pet (
-  idpet bigint UNIQUE PRIMARY KEY NOT NULL,
+  idpet bigint UNIQUE PRIMARY KEY NOT NULL AUTO_INCREMENT,
   name_Pet varchar(255) NOT NULL,
   age int,
   dt_birth date,
@@ -68,7 +68,7 @@ CREATE TABLE pet (
 );
 
 CREATE TABLE appointments (
-  idappointments bigint UNIQUE PRIMARY KEY NOT NULL,
+  idappointments bigint UNIQUE PRIMARY KEY NOT NULL AUTO_INCREMENT,
   diagnosis_appointments varchar(255),
   dt_appointments datetime,
   obs_appointments varchar(255),
@@ -77,7 +77,7 @@ CREATE TABLE appointments (
 );
 
 CREATE TABLE treatment (
-  idtreatment bigint UNIQUE PRIMARY KEY NOT NULL,
+  idtreatment bigint UNIQUE PRIMARY KEY NOT NULL AUTO_INCREMENT,
   desc_treatment varchar(255),
   dt_start date NOT NULL DEFAULT (now()),
   dt_end date,
@@ -86,13 +86,13 @@ CREATE TABLE treatment (
 );
 
 CREATE TABLE medication (
-  IDmedication bigint UNIQUE PRIMARY KEY NOT NULL,
+  IDmedication bigint UNIQUE PRIMARY KEY NOT NULL AUTO_INCREMENT,
   name_medication varchar(255) NOT NULL,
   prize DECIMAL(10,2)
 );
 
 CREATE TABLE prescription (
-  IDPrescription bigint UNIQUE PRIMARY KEY NOT NULL,
+  IDPrescription bigint UNIQUE PRIMARY KEY NOT NULL AUTO_INCREMENT,
   idtreatment bigint,
   idmedication bigint,
   dosage_medication varchar(255) NOT NULL,
@@ -103,14 +103,14 @@ CREATE TABLE prescription (
 );
 
 CREATE TABLE exam (
-  idexam bigint UNIQUE PRIMARY KEY NOT NULL,
+  idexam bigint UNIQUE PRIMARY KEY NOT NULL AUTO_INCREMENT,
   name_exam varchar(255) NOT NULL,
   dt_request datetime NOT NULL,
   idappointments bigint
 );
 
 CREATE TABLE result_exam (
-  IDResult_Exam bigint UNIQUE PRIMARY KEY NOT NULL,
+  IDResult_Exam bigint UNIQUE PRIMARY KEY NOT NULL AUTO_INCREMENT,
   name_result_exam varchar(255) NOT NULL,
   desc_result_exam varchar(255),
   dt_result_exam datetime,
