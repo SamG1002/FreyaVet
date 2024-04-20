@@ -48,7 +48,9 @@ public class ClientController {
     @Transactional
     public ResponseEntity RegisterClient(@RequestBody @Valid ClientRegister data, UriComponentsBuilder uriBuilder){
         UriComponentsBuilder uriBuilderUser = UriComponentsBuilder.fromPath("/user");
-        var client = UserService.registerClientAndUser(data, uriBuilderUser);
+        var user = UserService.registerUser(data.CreateUser(), uriBuilderUser);
+        Client client = new Client(data, user);
+        repository.save(client);
 
         var uri = uriBuilder.path("/client/{id}").buildAndExpand(client.getIdclient()).toUri();
         return ResponseEntity.created(uri).body(new ClientDetails(client));
@@ -68,7 +70,7 @@ public class ClientController {
         ResponseEntity<ClientDetails> clientResponse = FindClientByID(id);
         var iduser = clientResponse.getBody().user().getIduser();
 
-        var status = UserService.deleteUserByClient(iduser).getStatusCode();
+        var status = UserService.deleteUserByID(iduser).getStatusCode();
         return ResponseEntity.status(status).build();
     }
 }

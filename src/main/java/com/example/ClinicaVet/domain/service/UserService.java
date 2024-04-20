@@ -4,7 +4,12 @@ import com.example.ClinicaVet.controller.UserController;
 import com.example.ClinicaVet.domain.client.Client;
 import com.example.ClinicaVet.domain.client.ClientRegister;
 import com.example.ClinicaVet.domain.client.ClientRepository;
+import com.example.ClinicaVet.domain.doctor.Doctor;
+import com.example.ClinicaVet.domain.doctor.DoctorRegister;
+import com.example.ClinicaVet.domain.doctor.DoctorRepository;
+import com.example.ClinicaVet.domain.user.User;
 import com.example.ClinicaVet.domain.user.UserDetails;
+import com.example.ClinicaVet.domain.user.UserRegister;
 import com.example.ClinicaVet.domain.user.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -21,18 +26,18 @@ public class UserService {
     private UserRepository userRepository;
     @Autowired
     private ClientRepository clientRepository;
+    @Autowired
+    private DoctorRepository doctorRepository;
+
 
     @Transactional
-    public Client registerClientAndUser(ClientRegister data, UriComponentsBuilder uriBuilder) {
-        ResponseEntity <UserDetails> userResponse = userController.RegisterUser(data.CreateUser(), uriBuilder);
+    public User registerUser(UserRegister data, UriComponentsBuilder uriBuilder) {
+        ResponseEntity <UserDetails> userResponse = userController.RegisterUser(data, uriBuilder);
         var iduser = userResponse.getBody().iduser();
-        var user = userRepository.getReferenceById(iduser);
-
-        Client client = new Client(data, user);
-        return clientRepository.save(client);
+        return userRepository.getReferenceById(iduser);
     }
 
-    public ResponseEntity deleteUserByClient(Long iduser){
+    public ResponseEntity deleteUserByID(Long iduser){
         return userController.DeleteLogical(iduser);
     }
 }

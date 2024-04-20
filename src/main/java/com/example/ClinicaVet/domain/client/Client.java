@@ -25,7 +25,7 @@ public class Client {
     private String email_client;
     private LocalDate dt_birth;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "iduser")
     private User user;
 
@@ -45,17 +45,17 @@ public class Client {
         if(data.name_client() != null) {
             this.name_client = data.name_client() ;
         }
-        if(data.name_client() != null) {
+        if(data.cpf_client() != null) {
             this.cpf_client = data.cpf_client() ;
         }
-        if(data.cpf_client() != null) {
-            this.cpf_client = data.rg_client() ;
-        }
         if(data.rg_client() != null) {
-            this.rg_client = data.email_client() ;
+            this.cpf_client = data.rg_client() ;
         }
         if(data.email_client() != null) {
             this.email_client = data.email_client() ;
+        }
+        if(data.dt_birth() != null) {
+            this.dt_birth = data.dt_birth() ;
         }
         if(data.user() != null) {
             this.user = data.user();
