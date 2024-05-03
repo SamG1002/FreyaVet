@@ -21,7 +21,7 @@ public class DoctorService {
     private DoctorRepository doctorRepository;
 
     public Doctor saveDoctor(DoctorRegister data, User user, UriComponentsBuilder uriBuilder) {
-        var specialty = specialtyRepository.findSpecialtyByIdspecialty(4L);
+        var specialty = specialtyRepository.findSpecialtyByIdspecialty(data.idspecialty());
         var doctor = new Doctor(data, user, specialty);
         return doctorRepository.save(doctor);
     }
