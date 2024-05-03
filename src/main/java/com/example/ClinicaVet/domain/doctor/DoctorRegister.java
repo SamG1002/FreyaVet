@@ -17,8 +17,8 @@ public record DoctorRegister(
     String rg_doctor,
     String email_doctor,
     LocalDate dt_birth,
-    @NotNull(message = "CPF is mandatory")
-//    @Pattern(regexp = "\\d{6}\\-\\d{1}", message = "Invalid CPF format")
+    @NotNull(message = "CRM is mandatory")
+//    @Pattern(regexp = "\\d{6}\\-\\d{1}", message = "Invalid CRM format")
     String crm,
     @NotNull(message = "ID Specialty is mandatory")
     Long idspecialty
