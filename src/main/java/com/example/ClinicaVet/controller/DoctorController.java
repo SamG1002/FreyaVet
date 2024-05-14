@@ -48,7 +48,7 @@ public class DoctorController {
     @GetMapping("{id}")
     public ResponseEntity FindDoctorByID(@PathVariable Long id){
         return ResponseEntity.ok(
-                new DoctorDetails(repository.findAllDoctorsByID(id))
+                new DoctorDetails(repository.findDoctorByID(id))
         );
     }
 
@@ -65,7 +65,7 @@ public class DoctorController {
     @Transactional
     @PutMapping
     public ResponseEntity EditDoctor(@RequestBody @Valid DoctorEdit data, UriComponentsBuilder uriBuilder){
-        var doctor = repository.findAllDoctorsByID(data.iddoctor());
+        var doctor = repository.findDoctorByID(data.iddoctor());
         doctor.update(data);
         return ResponseEntity.ok(new DoctorDetails(doctor));
     }

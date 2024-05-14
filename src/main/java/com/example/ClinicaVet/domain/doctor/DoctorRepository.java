@@ -14,6 +14,6 @@ public interface DoctorRepository extends JpaRepository<Doctor, Long>  {
     List<Doctor> findAllDoctors();
 
     @Query("SELECT d FROM Doctor d JOIN FETCH d.user JOIN FETCH d.specialty WHERE d.id = :iddoctor")
-    Doctor findAllDoctorsByID(@Param("iddoctor") Long iddoctor);
+    Doctor findDoctorByID(@Param("iddoctor") Long iddoctor);
 
 }

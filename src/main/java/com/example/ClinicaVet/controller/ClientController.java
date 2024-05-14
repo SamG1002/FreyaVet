@@ -41,7 +41,7 @@ public class ClientController {
     @GetMapping("{id}")
     public ResponseEntity FindClientByID(@PathVariable Long id){
         return ResponseEntity.ok(
-                new ClientDetails(repository.getReferenceById(id))
+                new ClientDetails(repository.findClientByID(id))
         );
     }
     @PostMapping
@@ -59,7 +59,7 @@ public class ClientController {
     @Transactional
     @PutMapping
     public ResponseEntity EditClient(@RequestBody @Valid ClientEdit data){
-        var client = repository.getReferenceById(data.idclient());
+        var client = repository.findClientByID(data.idclient());
         client.update(data);
         return ResponseEntity.ok(new ClientDetails(client));
     }
