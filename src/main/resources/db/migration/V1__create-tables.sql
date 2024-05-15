@@ -4,7 +4,7 @@ DROP TABLE IF EXISTS exam;
 DROP TABLE IF EXISTS prescription;
 DROP TABLE IF EXISTS medication;
 DROP TABLE IF EXISTS treatment;
-DROP TABLE IF EXISTS appointments;
+DROP TABLE IF EXISTS appointment;
 DROP TABLE IF EXISTS pet;
 DROP TABLE IF EXISTS species;
 DROP TABLE IF EXISTS doctor;
@@ -37,7 +37,8 @@ CREATE TABLE client (
 
 CREATE TABLE specialty (
   idspecialty bigint UNIQUE PRIMARY KEY NOT NULL AUTO_INCREMENT,
-  name_specialty varchar(255) NOT NULL
+  name_specialty varchar(255) NOT NULL,
+  description_specialty VARCHAR(255)
 );
 
 CREATE TABLE doctor (
@@ -67,11 +68,11 @@ CREATE TABLE pet (
   idclient bigint
 );
 
-CREATE TABLE appointments (
-  idappointments bigint UNIQUE PRIMARY KEY NOT NULL AUTO_INCREMENT,
-  diagnosis_appointments varchar(255),
-  dt_appointments datetime,
-  obs_appointments varchar(255),
+CREATE TABLE appointment (
+  idappointment bigint UNIQUE PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  diagnosis_appointment varchar(255),
+  dt_appointment datetime,
+  obs_appointment varchar(255),
   iddoctor bigint,
   idpet bigint
 );
@@ -82,7 +83,7 @@ CREATE TABLE treatment (
   dt_start date NOT NULL DEFAULT (now()),
   dt_end date,
   prize DECIMAL(10,2),
-  idappointments bigint
+  idappointment bigint
 );
 
 CREATE TABLE medication (
@@ -106,7 +107,7 @@ CREATE TABLE exam (
   idexam bigint UNIQUE PRIMARY KEY NOT NULL AUTO_INCREMENT,
   name_exam varchar(255) NOT NULL,
   dt_request datetime NOT NULL,
-  idappointments bigint
+  idappointment bigint
 );
 
 CREATE TABLE result_exam (
@@ -129,7 +130,7 @@ ALTER TABLE species COMMENT = 'Tabela de Especies';
 
 ALTER TABLE pet COMMENT = 'Tabela de Animais';
 
-ALTER TABLE appointments COMMENT = 'Tabela de Consulta';
+ALTER TABLE appointment COMMENT = 'Tabela de Consulta';
 
 ALTER TABLE treatment COMMENT = 'Tabela de Tratamento';
 
@@ -151,16 +152,16 @@ ALTER TABLE pet ADD FOREIGN KEY (idspecies) REFERENCES species (idspecies);
 
 ALTER TABLE pet ADD FOREIGN KEY (idclient) REFERENCES client (idclient);
 
-ALTER TABLE appointments ADD FOREIGN KEY (iddoctor) REFERENCES doctor (iddoctor);
+ALTER TABLE appointment ADD FOREIGN KEY (iddoctor) REFERENCES doctor (iddoctor);
 
-ALTER TABLE appointments ADD FOREIGN KEY (idpet) REFERENCES pet (idpet);
+ALTER TABLE appointment ADD FOREIGN KEY (idpet) REFERENCES pet (idpet);
 
-ALTER TABLE treatment ADD FOREIGN KEY (idappointments) REFERENCES appointments (idappointments);
+ALTER TABLE treatment ADD FOREIGN KEY (idappointment) REFERENCES appointment (idappointment);
 
 ALTER TABLE prescription ADD FOREIGN KEY (idtreatment) REFERENCES treatment (idtreatment);
 
 ALTER TABLE prescription ADD FOREIGN KEY (idmedication) REFERENCES medication (idmedication);
 
-ALTER TABLE exam ADD FOREIGN KEY (idappointments) REFERENCES appointments (idappointments);
+ALTER TABLE exam ADD FOREIGN KEY (idappointment) REFERENCES appointment (idappointment);
 
 ALTER TABLE result_exam ADD FOREIGN KEY (idexam) REFERENCES exam (idexam);
