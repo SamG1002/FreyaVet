@@ -26,7 +26,7 @@ public class PetController {
 
     @GetMapping
     public List<Pet> getAllPetsActive() {
-        return repository.findAllWithUserActive();
+        return repository.findAllPetWithUserActive();
     }
 
     @GetMapping("/all")
@@ -37,7 +37,7 @@ public class PetController {
     @GetMapping("{id}")
     public ResponseEntity FindPetByID(@PathVariable Long id){
         return ResponseEntity.ok(
-                new PetDetails(repository.findAllPetsByID(id))
+                new PetDetails(repository.findPetsByID(id))
         );
     }
 
@@ -52,7 +52,7 @@ public class PetController {
     @Transactional
     @PutMapping
     public ResponseEntity EditPet(@RequestBody @Valid PetEdit data, UriComponentsBuilder uriBuilder){
-        var pet = repository.findAllPetsByID(data.idpet());
+        var pet = repository.findPetsByID(data.idpet());
         pet.update(data);
         return ResponseEntity.ok(new PetDetails(pet));
     }
