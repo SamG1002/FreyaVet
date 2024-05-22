@@ -1,8 +1,6 @@
 package com.example.ClinicaVet.domain.speciality;
 
 
-import com.example.ClinicaVet.domain.user.UserEdit;
-import com.example.ClinicaVet.domain.user.UserRegister;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;

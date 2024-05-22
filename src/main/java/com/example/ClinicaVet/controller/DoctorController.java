@@ -3,7 +3,6 @@ package com.example.ClinicaVet.controller;
 import com.example.ClinicaVet.domain.doctor.*;
 import com.example.ClinicaVet.domain.service.DoctorService;
 import com.example.ClinicaVet.domain.service.UserService;
-import com.example.ClinicaVet.domain.speciality.Specialty;
 import com.example.ClinicaVet.domain.speciality.SpecialtyRepository;
 import com.example.ClinicaVet.domain.user.UserRepository;
 import jakarta.validation.Valid;

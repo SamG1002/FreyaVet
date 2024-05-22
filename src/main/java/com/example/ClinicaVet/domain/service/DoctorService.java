@@ -3,11 +3,9 @@ package com.example.ClinicaVet.domain.service;
 import com.example.ClinicaVet.domain.doctor.Doctor;
 import com.example.ClinicaVet.domain.doctor.DoctorRegister;
 import com.example.ClinicaVet.domain.doctor.DoctorRepository;
-import com.example.ClinicaVet.domain.speciality.Specialty;
 import com.example.ClinicaVet.domain.speciality.SpecialtyRepository;
 import com.example.ClinicaVet.domain.user.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.stereotype.Service;
 import org.springframework.web.util.UriComponentsBuilder;
 

@@ -1,6 +1,4 @@
 package com.example.ClinicaVet.domain.client;
-import com.example.ClinicaVet.domain.doctor.Doctor;
-import com.example.ClinicaVet.domain.speciality.Specialty;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

@@ -2,7 +2,6 @@ package com.example.ClinicaVet.domain.doctor;
 
 import com.example.ClinicaVet.domain.speciality.Specialty;
 import com.example.ClinicaVet.domain.user.User;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;

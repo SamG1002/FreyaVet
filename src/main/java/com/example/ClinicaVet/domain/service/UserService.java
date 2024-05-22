@@ -1,11 +1,7 @@
 package com.example.ClinicaVet.domain.service;
 
 import com.example.ClinicaVet.controller.UserController;
-import com.example.ClinicaVet.domain.client.Client;
-import com.example.ClinicaVet.domain.client.ClientRegister;
 import com.example.ClinicaVet.domain.client.ClientRepository;
-import com.example.ClinicaVet.domain.doctor.Doctor;
-import com.example.ClinicaVet.domain.doctor.DoctorRegister;
 import com.example.ClinicaVet.domain.doctor.DoctorRepository;
 import com.example.ClinicaVet.domain.user.User;
 import com.example.ClinicaVet.domain.user.UserDetails;

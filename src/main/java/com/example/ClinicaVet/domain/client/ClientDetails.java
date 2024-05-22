@@ -4,7 +4,6 @@ import com.example.ClinicaVet.domain.user.User;
 import jakarta.validation.constraints.NotNull;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 public record ClientDetails(
         @NotNull

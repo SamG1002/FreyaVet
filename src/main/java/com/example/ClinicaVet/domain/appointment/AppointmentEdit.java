@@ -1,9 +1,7 @@
 package com.example.ClinicaVet.domain.appointment;
 
-import com.example.ClinicaVet.domain.client.Client;
 import com.example.ClinicaVet.domain.doctor.Doctor;
 import com.example.ClinicaVet.domain.pet.Pet;
-import com.example.ClinicaVet.domain.species.Species;
 import jakarta.validation.constraints.NotNull;
 
 import java.time.LocalDate;
