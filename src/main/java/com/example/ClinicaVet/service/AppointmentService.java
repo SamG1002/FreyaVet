@@ -1,4 +1,4 @@
-package com.example.ClinicaVet.domain.service;
+package com.example.ClinicaVet.service;
 
 import com.example.ClinicaVet.domain.appointment.Appointment;
 import com.example.ClinicaVet.domain.appointment.AppointmentRegister;

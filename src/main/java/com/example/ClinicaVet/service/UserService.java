@@ -1,4 +1,4 @@
-package com.example.ClinicaVet.domain.service;
+package com.example.ClinicaVet.service;
 
 import com.example.ClinicaVet.controller.UserController;
 import com.example.ClinicaVet.domain.client.ClientRepository;

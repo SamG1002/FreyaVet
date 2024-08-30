@@ -1,7 +1,7 @@
 package com.example.ClinicaVet.controller;
 
 import com.example.ClinicaVet.domain.pet.*;
-import com.example.ClinicaVet.domain.service.PetService;
+import com.example.ClinicaVet.service.PetService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

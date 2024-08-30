@@ -1,8 +1,8 @@
 package com.example.ClinicaVet.controller;
 
 import com.example.ClinicaVet.domain.doctor.*;
-import com.example.ClinicaVet.domain.service.DoctorService;
-import com.example.ClinicaVet.domain.service.UserService;
+import com.example.ClinicaVet.service.DoctorService;
+import com.example.ClinicaVet.service.UserService;
 import com.example.ClinicaVet.domain.speciality.SpecialtyRepository;
 import com.example.ClinicaVet.domain.user.UserRepository;
 import jakarta.validation.Valid;
@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/doctor")
